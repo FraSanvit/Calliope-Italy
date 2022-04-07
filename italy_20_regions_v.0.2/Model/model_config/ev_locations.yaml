@@ -1,0 +1,719 @@
+##
+# LOCATIONS EV - V2G
+##
+
+locations:  
+    ### Macro-region NORD - start
+
+    ## Macro-region NORD - sub-regions
+    # 01-Piemonte-start
+    R1:
+        techs:
+            ev_v2g:
+                constraints:
+                    energy_cap_max_time_varying: file=charging_limit.csv
+                    energy_cap_max: 1441660
+                    
+            ev_v1g:
+                constraints:
+                    # energy_cap_equals: 1000000  # kW
+                    energy_cap_max_time_varying: file=charging_limit.csv   #    <--- unlock file=varying_energy_cap_max_charge.csv 
+                    energy_cap_max: 1441660
+
+            ev_battery:
+                constraints:
+                    storage_cap_equals: 1441660
+                    storage_charge_depth: file=max_charge_depth.csv
+                    storage_discharge_depth: file=max_discharge_depth.csv
+                    
+            ev_motor:
+                constraints:
+                    energy_eff: file=ev_eff.csv
+            
+            demand_ev_mobility:
+                constraints:
+                    resource: file=demand-mobility.csv #km
+                    
+#            demand_charging:
+#                constraints:
+#                    resource: file=demand-charging.csv #kW
+
+
+    # 01-Piemonte-end
+    
+    # 02-Val d'Aosta-start
+    R2:
+        techs:
+            ev_v2g:
+                constraints:
+                    energy_cap_max_time_varying: file=charging_limit.csv
+                    energy_cap_max: 74432
+                    
+            ev_v1g:
+                constraints:
+                    # energy_cap_equals: 1000000  # kW
+                    energy_cap_max_time_varying: file=charging_limit.csv   #    <--- unlock file=varying_energy_cap_max_charge.csv 
+                    energy_cap_max: 74432
+
+            ev_battery:
+                constraints:
+                    storage_cap_equals: 74432
+                    storage_charge_depth: file=max_charge_depth.csv
+                    storage_discharge_depth: file=max_discharge_depth.csv
+                    
+            ev_motor:
+                constraints:
+                    energy_eff: file=ev_eff.csv
+            
+            demand_ev_mobility:
+                constraints:
+                    resource: file=demand-mobility.csv #km
+                    
+#            demand_charging:
+#                constraints:
+#                    resource: file=demand-charging.csv #kW
+                    
+    # 02-Val d'Aosta-end
+    
+    # 03-Lombardia-start
+    R3:
+        techs:
+            ev_v2g:
+                constraints:
+                    energy_cap_max_time_varying: file=charging_limit.csv
+                    energy_cap_max: 2999086
+                    
+            ev_v1g:
+                constraints:
+                    # energy_cap_equals: 1000000  # kW
+                    energy_cap_max_time_varying: file=charging_limit.csv   #    <--- unlock file=varying_energy_cap_max_charge.csv 
+                    energy_cap_max: 2999086
+
+            ev_battery:
+                constraints:
+                    storage_cap_equals: 2999086
+                    storage_charge_depth: file=max_charge_depth.csv
+                    storage_discharge_depth: file=max_discharge_depth.csv
+                    
+            ev_motor:
+                constraints:
+                    energy_eff: file=ev_eff.csv
+            
+            demand_ev_mobility:
+                constraints:
+                    resource: file=demand-mobility.csv #km
+                    
+#            demand_charging:
+#                constraints:
+#                    resource: file=demand-charging.csv #kW
+                    
+    # 03-Lombardia-end
+    
+    # 04-Trentino Alto Adige-start
+    R4:
+        techs:
+            ev_v2g:
+                constraints:
+                    energy_cap_max_time_varying: file=charging_limit.csv
+                    energy_cap_max: 478881
+                    
+            ev_v1g:
+                constraints:
+                    # energy_cap_equals: 1000000  # kW
+                    energy_cap_max_time_varying: file=charging_limit.csv   #    <--- unlock file=varying_energy_cap_max_charge.csv 
+                    energy_cap_max: 478881
+
+            ev_battery:
+                constraints:
+                    storage_cap_equals: 478881
+                    storage_charge_depth: file=max_charge_depth.csv
+                    storage_discharge_depth: file=max_discharge_depth.csv
+                    
+            ev_motor:
+                constraints:
+                    energy_eff: file=ev_eff.csv
+            
+            demand_ev_mobility:
+                constraints:
+                    resource: file=demand-mobility.csv #km
+                    
+#            demand_charging:
+#                constraints:
+#                    resource: file=demand-charging.csv #kW
+                    
+    # 04-Trentino Alto Adige-end
+            
+    # 05-Veneto-start
+    R5:
+        techs:
+            ev_v2g:
+                constraints:
+                    energy_cap_max_time_varying: file=charging_limit.csv
+                    energy_cap_max: 1529573
+                    
+            ev_v1g:
+                constraints:
+                    # energy_cap_equals: 1000000  # kW
+                    energy_cap_max_time_varying: file=charging_limit.csv   #    <--- unlock file=varying_energy_cap_max_charge.csv 
+                    energy_cap_max: 1529573
+
+            ev_battery:
+                constraints:
+                    storage_cap_equals: 1529573
+                    storage_charge_depth: file=max_charge_depth.csv
+                    storage_discharge_depth: file=max_discharge_depth.csv
+                    
+            ev_motor:
+                constraints:
+                    energy_eff: file=ev_eff.csv
+            
+            demand_ev_mobility:
+                constraints:
+                    resource: file=demand-mobility.csv #km
+                    
+#            demand_charging:
+#                constraints:
+#                    resource: file=demand-charging.csv #kW
+                    
+    # 05-Veneto-end
+
+    # 06-Friuli Venezia Giulia-start
+    R6:
+        techs:
+            ev_v2g:
+                constraints:
+                    energy_cap_max_time_varying: file=charging_limit.csv
+                    energy_cap_max: 390903
+                    
+            ev_v1g:
+                constraints:
+                    # energy_cap_equals: 1000000  # kW
+                    energy_cap_max_time_varying: file=charging_limit.csv   #    <--- unlock file=varying_energy_cap_max_charge.csv 
+                    energy_cap_max: 390903
+
+            ev_battery:
+                constraints:
+                    storage_cap_equals: 390903
+                    storage_charge_depth: file=max_charge_depth.csv
+                    storage_discharge_depth: file=max_discharge_depth.csv
+                    
+            ev_motor:
+                constraints:
+                    energy_eff: file=ev_eff.csv
+            
+            demand_ev_mobility:
+                constraints:
+                    resource: file=demand-mobility.csv #km
+                    
+#            demand_charging:
+#                constraints:
+#                    resource: file=demand-charging.csv #kW
+                    
+    # 06-Friuli Venezia Giulia-end
+    
+    # 07-Liguria-start
+    R7:
+        techs:
+            ev_v2g:
+                constraints:
+                    energy_cap_max_time_varying: file=charging_limit.csv
+                    energy_cap_max: 41613
+                    
+            ev_v1g:
+                constraints:
+                    # energy_cap_equals: 1000000  # kW
+                    energy_cap_max_time_varying: file=charging_limit.csv   #    <--- unlock file=varying_energy_cap_max_charge.csv 
+                    energy_cap_max: 41613
+
+            ev_battery:
+                constraints:
+                    storage_cap_equals: 41613
+                    storage_charge_depth: file=max_charge_depth.csv
+                    storage_discharge_depth: file=max_discharge_depth.csv
+                    
+            ev_motor:
+                constraints:
+                    energy_eff: file=ev_eff.csv
+            
+            demand_ev_mobility:
+                constraints:
+                    resource: file=demand-mobility.csv #km
+                    
+#            demand_charging:
+#                constraints:
+#                    resource: file=demand-charging.csv #kW
+                    
+    # 07-Liguria-end
+    
+    # 08-Emilia Romagna-start
+    R8:
+        techs:
+            ev_v2g:
+                constraints:
+                    energy_cap_max_time_varying: file=charging_limit.csv
+                    energy_cap_max: 1403078
+                    
+            ev_v1g:
+                constraints:
+                    # energy_cap_equals: 1000000  # kW
+                    energy_cap_max_time_varying: file=charging_limit.csv   #    <--- unlock file=varying_energy_cap_max_charge.csv 
+                    energy_cap_max: 1403078
+
+            ev_battery:
+                constraints:
+                    storage_cap_equals: 1403078
+                    storage_charge_depth: file=max_charge_depth.csv
+                    storage_discharge_depth: file=max_discharge_depth.csv
+                    
+            ev_motor:
+                constraints:
+                    energy_eff: file=ev_eff.csv
+            
+            demand_ev_mobility:
+                constraints:
+                    resource: file=demand-mobility.csv #km
+                    
+#            demand_charging:
+#                constraints:
+#                    resource: file=demand-charging.csv #kW
+        
+    # 08-Emilia Romagna-end
+    ## Macro-region NORD - sub-regions - end
+    ### Macro-region NORD - end
+    
+    ## Macro-region CNOR - sub-regions - start
+    # 09-Toscana-start
+    R9:
+        techs:
+            ev_v2g:
+                constraints:
+                    energy_cap_max_time_varying: file=charging_limit.csv
+                    energy_cap_max: 1224881
+                    
+            ev_v1g:
+                constraints:
+                    # energy_cap_equals: 1000000  # kW
+                    energy_cap_max_time_varying: file=charging_limit.csv   #    <--- unlock file=varying_energy_cap_max_charge.csv 
+                    energy_cap_max: 1224881
+
+            ev_battery:
+                constraints:
+                    storage_cap_equals: 1224881
+                    storage_charge_depth: file=max_charge_depth.csv
+                    storage_discharge_depth: file=max_discharge_depth.csv
+                    
+            ev_motor:
+                constraints:
+                    energy_eff: file=ev_eff.csv
+            
+            demand_ev_mobility:
+                constraints:
+                    resource: file=demand-mobility.csv #km
+                    
+#            demand_charging:
+#                constraints:
+#                    resource: file=demand-charging.csv #kW
+             
+    # 09-Toscana-end
+    
+    # 10-Umbria-start
+    R10:
+        techs:
+            ev_v2g:
+                constraints:
+                    energy_cap_max_time_varying: file=charging_limit.csv
+                    energy_cap_max: 311743
+                    
+            ev_v1g:
+                constraints:
+                    # energy_cap_equals: 1000000  # kW
+                    energy_cap_max_time_varying: file=charging_limit.csv   #    <--- unlock file=varying_energy_cap_max_charge.csv 
+                    energy_cap_max: 311743
+
+            ev_battery:
+                constraints:
+                    storage_cap_equals: 311743
+                    storage_charge_depth: file=max_charge_depth.csv
+                    storage_discharge_depth: file=max_discharge_depth.csv
+                    
+            ev_motor:
+                constraints:
+                    energy_eff: file=ev_eff.csv
+            
+            demand_ev_mobility:
+                constraints:
+                    resource: file=demand-mobility.csv #km
+                    
+#            demand_charging:
+#                constraints:
+#                    resource: file=demand-charging.csv #kW
+                    
+    # 10-Umbria-end
+    
+    # 11-Marche-start
+    R11:
+        techs:
+            ev_v2g:
+                constraints:
+                    energy_cap_max_time_varying: file=charging_limit.csv
+                    energy_cap_max: 502518
+                    
+            ev_v1g:
+                constraints:
+                    # energy_cap_equals: 1000000  # kW
+                    energy_cap_max_time_varying: file=charging_limit.csv   #    <--- unlock file=varying_energy_cap_max_charge.csv 
+                    energy_cap_max: 502518
+
+            ev_battery:
+                constraints:
+                    storage_cap_equals: 502518
+                    storage_charge_depth: file=max_charge_depth.csv
+                    storage_discharge_depth: file=max_discharge_depth.csv
+                    
+            ev_motor:
+                constraints:
+                    energy_eff: file=ev_eff.csv
+            
+            demand_ev_mobility:
+                constraints:
+                    resource: file=demand-mobility.csv #km
+                    
+#            demand_charging:
+#                constraints:
+#                    resource: file=demand-charging.csv #kW
+                    
+    # 11-Marche-end
+    ## Macro-region CNOR - sub-regions - end
+    ### Macro-region CNOR - end
+    
+    ### Macro-region CSUD - start
+    ## Macro-region CSUD - sub-regions - start
+    # 12-Lazio-start
+    R12:
+        techs:
+            ev_v2g:
+                constraints:
+                    energy_cap_max_time_varying: file=charging_limit.csv
+                    energy_cap_max: 1866132
+                    
+            ev_v1g:
+                constraints:
+                    # energy_cap_equals: 1000000  # kW
+                    energy_cap_max_time_varying: file=charging_limit.csv   #    <--- unlock file=varying_energy_cap_max_charge.csv 
+                    energy_cap_max: 1866132
+
+            ev_battery:
+                constraints:
+                    storage_cap_equals: 1866132
+                    storage_charge_depth: file=max_charge_depth.csv
+                    storage_discharge_depth: file=max_discharge_depth.csv
+                    
+            ev_motor:
+                constraints:
+                    energy_eff: file=ev_eff.csv
+            
+            demand_ev_mobility:
+                constraints:
+                    resource: file=demand-mobility.csv #km
+                    
+#            demand_charging:
+#                constraints:
+#                    resource: file=demand-charging.csv #kW
+        
+    # 12-Lazio-end
+    
+    # 13-Abruzzo-start
+    R13:
+        techs:
+            ev_v2g:
+                constraints:
+                    energy_cap_max_time_varying: file=charging_limit.csv
+                    energy_cap_max: 429077
+                    
+            ev_v1g:
+                constraints:
+                    # energy_cap_equals: 1000000  # kW
+                    energy_cap_max_time_varying: file=charging_limit.csv   #    <--- unlock file=varying_energy_cap_max_charge.csv 
+                    energy_cap_max: 429077
+
+            ev_battery:
+                constraints:
+                    storage_cap_equals: 429077
+                    storage_charge_depth: file=max_charge_depth.csv
+                    storage_discharge_depth: file=max_discharge_depth.csv
+                    
+            ev_motor:
+                constraints:
+                    energy_eff: file=ev_eff.csv
+            
+            demand_ev_mobility:
+                constraints:
+                    resource: file=demand-mobility.csv #km
+                    
+#            demand_charging:
+#                constraints:
+#                    resource: file=demand-charging.csv #kW
+                    
+    # 13-Abruzzo-end
+    
+    # 14-Campania-start
+    R14:
+        techs:
+            ev_v2g:
+                constraints:
+                    energy_cap_max_time_varying: file=charging_limit.csv
+                    energy_cap_max: 1693109
+                    
+            ev_v1g:
+                constraints:
+                    # energy_cap_equals: 1000000  # kW
+                    energy_cap_max_time_varying: file=charging_limit.csv   #    <--- unlock file=varying_energy_cap_max_charge.csv 
+                    energy_cap_max: 1693109
+
+            ev_battery:
+                constraints:
+                    storage_cap_equals: 1693109
+                    storage_charge_depth: file=max_charge_depth.csv
+                    storage_discharge_depth: file=max_discharge_depth.csv
+                    
+            ev_motor:
+                constraints:
+                    energy_eff: file=ev_eff.csv
+            
+            demand_ev_mobility:
+                constraints:
+                    resource: file=demand-mobility.csv #km
+                    
+#            demand_charging:
+#                constraints:
+#                    resource: file=demand-charging.csv #kW
+        
+    # 14-Campania-end
+    ## Macro-region CSUD - sub-regions - end
+    ### Macro-region CSUD - end
+    
+    ### Macro-region SUD
+    ## Macro-region SUD - sub-regions - start
+    # 15-Molise-start
+    R15:
+        techs:
+            ev_v2g:
+                constraints:
+                    energy_cap_max_time_varying: file=charging_limit.csv
+                    energy_cap_max: 103583
+                    
+            ev_v1g:
+                constraints:
+                    # energy_cap_equals: 1000000  # kW
+                    energy_cap_max_time_varying: file=charging_limit.csv   #    <--- unlock file=varying_energy_cap_max_charge.csv 
+                    energy_cap_max: 103583
+
+            ev_battery:
+                constraints:
+                    storage_cap_equals: 103583
+                    storage_charge_depth: file=max_charge_depth.csv
+                    storage_discharge_depth: file=max_discharge_depth.csv
+                    
+            ev_motor:
+                constraints:
+                    energy_eff: file=ev_eff.csv
+            
+            demand_ev_mobility:
+                constraints:
+                    resource: file=demand-mobility.csv #km
+                    
+#            demand_charging:
+#                constraints:
+#                    resource: file=demand-charging.csv #kW
+         
+    # 15-Molise-end
+    
+    # 16-Puglia-start
+    R16:
+        techs:
+            ev_v2g:
+                constraints:
+                    energy_cap_max_time_varying: file=charging_limit.csv
+                    energy_cap_max: 1145636
+                    
+            ev_v1g:
+                constraints:
+                    # energy_cap_equals: 1000000  # kW
+                    energy_cap_max_time_varying: file=charging_limit.csv   #    <--- unlock file=varying_energy_cap_max_charge.csv 
+                    energy_cap_max: 1145636
+
+            ev_battery:
+                constraints:
+                    storage_cap_equals: 1145636
+                    storage_charge_depth: file=max_charge_depth.csv
+                    storage_discharge_depth: file=max_discharge_depth.csv
+                    
+            ev_motor:
+                constraints:
+                    energy_eff: file=ev_eff.csv
+            
+            demand_ev_mobility:
+                constraints:
+                    resource: file=demand-mobility.csv #km
+                    
+#            demand_charging:
+#                constraints:
+#                    resource: file=demand-charging.csv #kW
+        
+    # 16-Puglia-end
+    
+    # 17-Basilicata-start
+    R17:
+        techs:
+            ev_v2g:
+                constraints:
+                    energy_cap_max_time_varying: file=charging_limit.csv
+                    energy_cap_max: 182821
+                    
+            ev_v1g:
+                constraints:
+                    # energy_cap_equals: 1000000  # kW
+                    energy_cap_max_time_varying: file=charging_limit.csv   #    <--- unlock file=varying_energy_cap_max_charge.csv 
+                    energy_cap_max: 182821
+
+            ev_battery:
+                constraints:
+                    storage_cap_equals: 182821
+                    storage_charge_depth: file=max_charge_depth.csv
+                    storage_discharge_depth: file=max_discharge_depth.csv
+                    
+            ev_motor:
+                constraints:
+                    energy_eff: file=ev_eff.csv
+            
+            demand_ev_mobility:
+                constraints:
+                    resource: file=demand-mobility.csv #km
+                    
+#            demand_charging:
+#                constraints:
+#                    resource: file=demand-charging.csv #kW
+        
+    # 17-Basilicata-end
+    
+    # 18-Calabria-start
+    R18:
+        techs:
+            ev_v2g:
+                constraints:
+                    energy_cap_max_time_varying: file=charging_limit.csv
+                    energy_cap_max: 619084
+                    
+            ev_v1g:
+                constraints:
+                    # energy_cap_equals: 1000000  # kW
+                    energy_cap_max_time_varying: file=charging_limit.csv   #    <--- unlock file=varying_energy_cap_max_charge.csv 
+                    energy_cap_max: 619084
+
+            ev_battery:
+                constraints:
+                    storage_cap_equals: 619084
+                    storage_charge_depth: file=max_charge_depth.csv
+                    storage_discharge_depth: file=max_discharge_depth.csv
+                    
+            ev_motor:
+                constraints:
+                    energy_eff: file=ev_eff.csv
+            
+            demand_ev_mobility:
+                constraints:
+                    resource: file=demand-mobility.csv #km
+                    
+#            demand_charging:
+#                constraints:
+#                    resource: file=demand-charging.csv #kW
+       
+    # 18-Calabria-end
+    ## Macro-region SUD - sub-regions - end
+    ### Macro-region SUD - end
+    
+    ### Macro-region SICI/R19 - start
+    # 19-Sicilia-start
+    SICI:
+        techs:
+            ev_v2g:
+                constraints:
+                    energy_cap_max_time_varying: file=charging_limit.csv
+                    energy_cap_max: 1604612
+                    
+            ev_v1g:
+                constraints:
+                    # energy_cap_equals: 1000000  # kW
+                    energy_cap_max_time_varying: file=charging_limit.csv   #    <--- unlock file=varying_energy_cap_max_charge.csv 
+                    energy_cap_max: 1604612
+
+            ev_battery:
+                constraints:
+                    storage_cap_equals: 1604612
+                    storage_charge_depth: file=max_charge_depth.csv
+                    storage_discharge_depth: file=max_discharge_depth.csv
+                    
+            ev_motor:
+                constraints:
+                    energy_eff: file=ev_eff.csv
+            
+            demand_ev_mobility:
+                constraints:
+                    resource: file=demand-mobility.csv #km
+                    
+#            demand_charging:
+#                constraints:
+#                    resource: file=demand-charging.csv #kW  
+        
+            battery:
+                constraints:
+                    energy_cap_min: 0 
+                    energy_cap_max: 5e+7
+        
+    # 19-Sicilia-end
+    ### Macro-region SICI/R19 - end
+    
+    ### Macro-region SARD/R20 - start
+    # 20-Sardegna-start
+    SARD:
+        techs:
+            ev_v2g:
+                constraints:
+                    energy_cap_max_time_varying: file=charging_limit.csv
+                    energy_cap_max: 511690
+                    
+            ev_v1g:
+                constraints:
+                    # energy_cap_equals: 1000000  # kW
+                    energy_cap_max_time_varying: file=charging_limit.csv   #    <--- unlock file=varying_energy_cap_max_charge.csv 
+                    energy_cap_max: 511690
+
+            ev_battery:
+                constraints:
+                    storage_cap_equals: 511690
+                    storage_charge_depth: file=max_charge_depth.csv
+                    storage_discharge_depth: file=max_discharge_depth.csv
+                    
+            ev_motor:
+                constraints:
+                    energy_eff: file=ev_eff.csv
+            
+            demand_ev_mobility:
+                constraints:
+                    resource: file=demand-mobility.csv #km
+                    
+#            demand_charging:
+#                constraints:
+#                    resource: file=demand-charging.csv #kW
+          
+            battery:
+                constraints:
+                    energy_cap_min: 0 
+                    energy_cap_max: 5e+7
+        
+    # 20-Sardegna-end
+    ### Macro-region SARD/R20 - end
+    
+
+
+    

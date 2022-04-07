@@ -1,0 +1,170 @@
+##
+# TECHNOLOGY DEFINITIONS
+##
+
+# Note: '-start' and '-end' is used in tutorial documentation only
+
+techs:
+    ##
+    # Supply
+    ##
+    
+    ##
+    # Conversion plus
+    ##    
+    
+    # Vehicle-to-Grid-start
+    
+    ev_v2g:
+        essentials:
+            name: 'V2G charging'
+            color: '#9400D1'
+            parent: conversion_plus
+            carrier_in: [electricity, ev_electricity]
+            primary_carrier_in: electricity # default: ev_power
+            carrier_out: [ev_electricity, electricity]
+            primary_carrier_out: electricity
+        constraints:
+            energy_eff: 0.98
+            lifetime: 10
+            # energy_cap_max_time_varying: file=varying_energy_cap_max_charge_red.csv
+            # energy_cap_max: 1000000
+        costs:
+            monetary:
+                energy_cap: 600.0  # $/kW     default: 600
+                om_annual: 0.0  # ($/kW/year) default: 400/50
+                om_prod: 0.0  # ($/kWh)
+                om_con: 0.0 # ($/kWh) # added
+                interest_rate: 1
+                
+    # Vehicle-to-Grid-end
+    
+    # Unidirectional charging-start
+                
+    ev_v1g:
+        essentials:
+            name: 'Electric vehicle charging'
+            color: '#3BE36D'
+            parent: conversion_plus
+            carrier_in: electricty
+            carrier_out: ev_electricity
+            primary_carrier_out: ev_electricity
+        constraints:
+            lifetime: 10  # assumption, not given
+            energy_eff: 0.98
+            # energy_cap_equals: 1000000  # kW
+            # energy_cap_max_time_varying: file=varying_energy_cap_max_charge_red.csv   #    <--- unlock file=varying_energy_cap_max_charge.csv 
+        costs:
+            monetary:
+                energy_cap: 600.0  # €/kW     default: 600
+                om_annual: 0.0  # (€/kW/year) default: 400/50
+                om_prod: 0.0  # (€/kWh)
+                interest_rate: 1
+                
+    # Unidirectional charging-end
+    
+    # EV motor-start
+    
+    ev_motor:
+        essentials:
+            name: 'Electric vehicle'
+            color: '#0ae9f5'
+            parent: conversion_plus
+            carrier_in: ev_electricity
+            carrier_out: ev_vkm
+            primary_carrier_out: ev_vkm
+        constraints:
+            # energy_eff: file=ev_eff.csv # 5 # km/kW   it should include the discharge efficiency of the battery
+            energy_eff: 5
+            lifetime: 15  # assumption, not given
+        costs:
+            monetary:
+                energy_cap: 0 # kW
+                om_annual: 0  # ($/kW/year)
+                om_prod: 0  # ($/kW)
+                interest_rate: 1
+    
+    # EV motor-end
+    
+    ##
+    # Storage
+    ##
+
+    # ev_battery-start
+       
+    ev_battery:
+        essentials:
+            name: 'EV battery storage'
+            color: '#1c29e8'
+            parent: storage
+            carrier: ev_electricity
+        constraints:
+            # storage_cap_equals: 500000  # kWh           <-- +/- 10000 vehicles x 50 kWh/vehicle
+            # storage_cap_max: 10000
+            energy_cap_per_storage_cap_max: 1
+            # energy_cap_max_time_varying: file=varying_energy_cap_max_battery.csv
+            # storage_charge_depth: file=max_charge_depth.csv
+            # storage_discharge_depth: file=max_discharge_depth.csv
+            storage_initial: 0.31
+            energy_eff: 1  # efficiencies are already taken into account in previous and next modelling steps
+            storage_loss: 0.0  # No loss over time assumed
+            lifetime: 10 # years
+        costs:
+            monetary:
+                om_prod: 0.0 # set to avoid contemporary charge/discharge
+                interest_rate: 1
+                storage_cap: 0 # €/kWh
+    # ev_battery-end
+    
+    # bess-start
+    battery:
+        essentials:
+            color: '#177202'
+            name: 'Battery energy storage'
+            parent: storage
+            carrier: electricity
+        constraints:
+            energy_cap_per_storage_cap_max: 0.25  # {own_assumptions}
+            energy_eff: 0.98  # 0.98*0.98 = 0.96 round-trip eff {IRENA2017}
+            storage_cap_max: 2e+8
+            lifetime: 15  # {Brown et al. , Energy, 2018}
+            # force_asynchronous_prod_con: True
+        costs:
+            monetary:
+                interest_rate: 0.1
+                storage_cap: 433  # {IRENA2017 and O. Schmidt, A. Hawkes, A. Gambhir and I. Staffell, Nature En. 2017}
+                om_annual: 7.22  # converted from Calliope-UK
+                om_prod: 0.0022  # converted from Calliope-UK
+            nos_score:
+                interest_rate: 1
+                energy_cap: 0
+            excl_score:
+                interest_rate: 1
+                energy_cap: 0
+    # bess-end    
+            
+    ##
+    # Demand
+    ##
+
+    # ev_demand-start
+    
+    demand_ev_mobility:
+        essentials:
+            name: 'Electric vehicle mobility demand'
+            color: '#500713'
+            parent: demand
+            carrier: ev_vkm
+
+    # ev_demand-end
+    
+    # ev_uncontrolled charging demand-start
+    
+    demand_charging:
+        essentials: 
+            name: 'Uncontrolled charging demand'
+            color: '#050481'
+            parent: demand
+            carrier: electricity   
+            
+    # ev_uncontrolled charging demand-end
